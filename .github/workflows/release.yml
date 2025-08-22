@@ -1,0 +1,31 @@
+# .github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    branches:
+      - main # リリースを行うブランチ
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # semantic-releaseは履歴全体を必要とするため、これを設定する
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Semantic Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # npmのパブリッシュが必要な場合は以下も設定
+          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
