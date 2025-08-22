@@ -6,6 +6,10 @@ on:
     branches:
       - main # リリースを行うブランチ
 
+# ここにpermissionsセクションを追加
+permissions:
+  contents: write # リポジトリへの書き込みを許可する      
+
 jobs:
   release:
     name: Release
