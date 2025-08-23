@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/tomo1015/Unity-Game-Framework/compare/v1.1.0...v1.2.0) (2025-08-23)
+
+
+### Features
+
+* package.jsonに設定を追加 ([c9c798d](https://github.com/tomo1015/Unity-Game-Framework/commit/c9c798df67a61de71f4396bd12bfa05582006df2))
+* workflow更新 ([3e72aca](https://github.com/tomo1015/Unity-Game-Framework/commit/3e72aca8d0d33d9ad81ba2891a7a01e250ec1a54))
+
 # [1.1.0](https://github.com/tomo1015/Unity-Game-Framework/compare/v1.0.0...v1.1.0) (2025-08-23)
 
 
