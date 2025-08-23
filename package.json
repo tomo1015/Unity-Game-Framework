@@ -7,5 +7,28 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "semantic-release": "^24.2.7"
+  },
+  "release": {
+    "branches": ["main"],
+    "tagFormat": "${version}",
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            { "type": "fix", "release": "patch" },
+            { "type": "feat", "release": "minor" },
+            { "type": "major", "release": "major" }
+          ],
+          "parserOpts": {
+            "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
+          }
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
   }
 }
