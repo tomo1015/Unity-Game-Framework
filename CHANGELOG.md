@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/tomo1015/Unity-Game-Framework/compare/v1.0.0...v1.1.0) (2025-08-23)
+
+
+### Features
+
+* 特定のタグ付けによるバージョン管理を追加 ([657d35f](https://github.com/tomo1015/Unity-Game-Framework/commit/657d35f0b6a413289af9dd41813b2011c9a99ab7))
+
 # 1.0.0 (2025-08-22)
 
 
