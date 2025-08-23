@@ -14,22 +14,21 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # タグをすべて取得するため必須
+          persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/checkout@v4
         with:
-          node-version: 20
+          fetch-depth: 0 # semantic-releaseは履歴全体を必要とするため、これを設定する
+          persist-credentials: false
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Run semantic-release
+        
+      - name: Semantic Release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NPM_TOKEN は npm publish する場合のみ必要
-          # NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
